@@ -17,13 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::controller(LoginController::class)->group(function () {
 
@@ -35,5 +32,6 @@ Route::controller(LoginController::class)->group(function () {
 Route::controller(AdminCatagoriesController::class)->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin', 'index');
     Route::get('/admin/create', 'create');
+    Route::get('/admin/items', 'items');
     Route::post('/admin/store', 'store');
 });

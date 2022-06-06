@@ -2,22 +2,30 @@
         <div
           class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottem"
         >
-          Dream-Line
+          Admin-Panel
         </div>
 
         <div class="list-group list-group-flush my-3">
           <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent secondary-text active"
+            href="{{ url('/admin') }}"
+            class="list-group-item list-group-item-action bg-transparent secondary-text"
           >
             <i class="fas fa-tachometer-alt me-2"></i>Dashboard
           </a>
           <a
-            href="#"
+            href="{{ url('/admin/create') }}"
             class="list-group-item list-group-item-action bg-transparent secondary-text"
           >
-            <i class="fas fa-project-diagram me-2"></i>Projects
+            <i class="fas fa-project-diagram me-2"></i>Add item
           </a>
+
+          <a
+            href="{{ url('/admin/items') }}"
+            class="list-group-item list-group-item-action bg-transparent secondary-text"
+          >
+            <i class="fas fa-project-diagram me-2"></i>All items
+          </a>
+
           <a
             href="#"
             class="list-group-item list-group-item-action bg-transparent secondary-text"

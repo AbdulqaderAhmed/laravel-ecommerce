@@ -37,6 +37,7 @@
 }
 
 #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
     font-size: 1.2rem;
 }
 
@@ -61,7 +62,7 @@
     padding: 20px 30px;
 }
 
-.list-group-item.active {
+.list-group-item:active {
     background-color: transparent;
     color: var(--main-text-color);
     font-weight: bold;
@@ -70,7 +71,7 @@
 
 @media (min-width: 768px) {
     #sidebar-wrapper {
-        margin-left: -15rem;
+        margin-left: 0;
     }
 
     #page-content-wrapper {
@@ -79,6 +80,6 @@
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        margin-left: 0;
+        margin-left: -15rem;
     }
 }

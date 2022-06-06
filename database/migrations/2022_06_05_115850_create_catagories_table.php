@@ -21,8 +21,8 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->string('name');
             $table->string('type');
-            $table->text('desciption');
-            $table->string('image');
+            $table->text('description');
+            $table->string('image_path');
             $table->integer('price');
             $table->timestamps();
         });

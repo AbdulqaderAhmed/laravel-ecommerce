@@ -35,15 +35,15 @@
                     <ul class="navbar-nav me-auto">
                         @auth
                             <li class="nav-item">
-                                <a href="/home" class="nav-link">Home</a>
+                                <a href="/" class="nav-link">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/home" class="nav-link">Products</a>
+                                <a href="/" class="nav-link">Products</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/home" class="nav-link">About</a>
+                                <a href="/" class="nav-link">About</a>
                             </li>
                         @endauth
                     </ul>
@@ -65,7 +65,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="/home" class="nav-link">Charts</a>
+                                <a href="/" class="nav-link">Charts</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -74,9 +74,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a href="/home" class="dropdown-item">Profile</a>
+                                    @if (Auth::user()->role == '1')
+                                        <a href="/admin" class="dropdown-item">Admin Panel</a>
+                                    @endif
+                                    <a href="/" class="dropdown-item">Profile</a>
 
-                                    <a href="/home" class="dropdown-item">Setting</a>
+                                    <a href="/" class="dropdown-item">Setting</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

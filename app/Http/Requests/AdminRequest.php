@@ -13,7 +13,7 @@ class AdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,7 +28,7 @@ class AdminRequest extends FormRequest
             'type' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|mimes:png,jpg,jpeg|max:5020',
-            'prize' => 'required|integer'
+            'price' => 'required|integer'
         ];
     }
 
@@ -49,8 +49,8 @@ class AdminRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name' => 'Name of itme',
-            'type' => 'Type of itme',
+            'name' => 'Name of item',
+            'type' => 'Type of item',
             'description' => 'Detail of item',
             'image' => 'Image of item',
             'prize' => 'Prize of item',
