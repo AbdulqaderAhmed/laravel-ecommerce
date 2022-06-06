@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCatagoriesController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
@@ -31,10 +32,8 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/github/callback', 'callBackFromGitHub');
 });
 
-Route::get('/test', [TestController::class, 'test']);
-
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/admin', function () {
-        return view('pages.dashboard');
-    });
+Route::controller(AdminCatagoriesController::class)->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/admin', 'index');
+    Route::get('/admin/create', 'create');
+    Route::post('/admin/store', 'store');
 });
