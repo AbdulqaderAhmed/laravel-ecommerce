@@ -25,7 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'type' => 'required|string',
+            'catagory' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|mimes:png,jpg,jpeg|max:5020',
             'price' => 'required|integer'
@@ -36,7 +36,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'name.required' => ' :attribute is required',
-            'type.required' => ' :attribute is required',
+            'catagory.required' => ' :attribute is required',
             'description.required' => ' :attribute is required',
             'image.required' => ' :attribute is required',
             'image.max' => ' :attribute maximum size',
@@ -50,7 +50,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'name' => 'Name of item',
-            'type' => 'Type of item',
+            'catagory' => 'Type of item',
             'description' => 'Detail of item',
             'image' => 'Image of item',
             'prize' => 'Prize of item',

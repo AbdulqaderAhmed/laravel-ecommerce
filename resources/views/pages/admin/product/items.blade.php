@@ -10,10 +10,12 @@
                 <tr>
                     <th scope="col" width="50">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Type</th>
+                    <th scope="col">Catagory</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Price</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,18 +23,24 @@
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->type }}</td>
+                    <td>{{ $item->catagory }}</td>
+                    <td>{{ $item->description }}</td>
                     <td>{{ $item->price }}</td>
                     <td><img src="{{ asset('/images/'.$item->image_path) }}" height="80px" class="activator"></td>
                     <td>
-                        <a href="#" class="btn btn-warning">Edit</a>
-                        <a href="#" class="btn btn-danger ">Delete</a>
+                        <a href="{{ url('/admin/product/'.$item->id) }}" class="btn btn-danger">
+                            Delete
+                        </a>
                     </td>
-                </tr> 
+                    <td>
+                        <a href="{{ url('/admin/product/update/'.$item->id) }}" class="btn btn-warning">Edit</a>
+                    </td>
+                    
+                </tr>
                 @endforeach
             </tbody>
         </table>
-        {{ $items->onEachSide(1)->links() }}
+        {{ $items->links() }}
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminCatagoriesController;
+use App\Http\Controllers\AdminProduct;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
@@ -34,4 +35,14 @@ Route::controller(AdminCatagoriesController::class)->middleware(['auth', 'isAdmi
     Route::get('/admin/create', 'create');
     Route::get('/admin/items', 'items');
     Route::post('/admin/store', 'store');
+    Route::delete('/admin/{id}', 'destroy');
+});
+
+Route::controller(AdminProduct::class)->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/admin/product', 'index');
+    Route::get('/admin/product/create', 'create');
+    Route::post('/admin/product/store', 'store');
+    Route::get('/admin/product/{id}', 'destroy');
+    Route::get('/admin/product/update/{id}', 'update_product');
+    Route::put('/admin/product/update/{id}', 'update');
 });
