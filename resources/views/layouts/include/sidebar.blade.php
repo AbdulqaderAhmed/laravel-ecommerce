@@ -2,7 +2,7 @@
         <div
           class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottem"
         >
-          Admin-Panel
+          E-Shop Admin Panel
         </div>
         <div class="list-group list-group-flush my-3">
           <a
@@ -66,8 +66,6 @@
     
               </ul>
           </div>
-
-          
           <a
             href="#"
             class="list-group-item list-group-item-action bg-transparent secondary-text"
